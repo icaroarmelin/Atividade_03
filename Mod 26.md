@@ -1,11 +1,13 @@
 
 # Mod 26
 
-**Categoria:** Criptografia  
-**Plataforma:** CyLab  
-**Dificuldade:** Fácil
+Categoria: Criptografia
 
-## 1. Introdução
+Plataforma: CyLab  
+
+Dificuldade: Fácil
+
+## Introdução
 
 Este write-up apresenta a resolução do desafio *Mod 26*, disponibilizado na plataforma CyLab como exercício prático de criptografia.
 
@@ -13,7 +15,7 @@ O desafio consiste em decodificar uma mensagem utilizando uma técnica de substi
 
 Seu principal objetivo é introduzir conceitos básicos de criptografia, especialmente as cifras de substituição e o funcionamento da aritmética modular.
 
-## 2. Enunciado
+## Enunciado
 
 O desafio apresenta a seguinte descrição:
 
@@ -21,7 +23,7 @@ O desafio apresenta a seguinte descrição:
 
 Além do enunciado, é disponibilizada uma sequência de caracteres codificados, que devemos decifrar para encontrar a flag.
 
-## 3. Interpretação do desafio
+## Interpretação do desafio
 
 O enunciado fornece uma dica importante ao mencionar diretamente o ROT13.
 
@@ -31,9 +33,9 @@ No caso do ROT13, esse deslocamento é de 13 posições.
 
 Como o alfabeto utilizado possui 26 letras, podemos representar matematicamente a transformação por:
 
-\[
-f(x) = (x + 13) \bmod 26
-\]
+
+f(x) = (x + 13) mod 26
+
 
 Onde:
 
@@ -45,33 +47,28 @@ Por exemplo, a letra `A` se transforma em `N`, enquanto a letra `N` se transform
 
 Dessa forma, aplicar o ROT13 duas vezes retorna à mensagem original.
 
-A partir dessa interpretação, a estratégia foi utilizar o terminal Linux para substituir os caracteres da mensagem e recuperar a flag.
+A partir dessa interpretação, a estratégia foi utilizar o terminal para substituir os caracteres da mensagem e recuperar a flag.
 
-## 4. Resolução
 
-### Etapa 1 — Análise da mensagem codificada
+
+### Etapa 1: Análise da mensagem codificada
 
 Ao iniciar o desafio, recebemos uma sequência de caracteres semelhante a:
 
 ```text
-cvpbPGS{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_...}
+npnqrzl{arkg_gvzr_V'yy_gel_2_ebhaqf_bs_ebg13_5p5s5o36}
 ```
 
-**Resultado:**
+<img width="487" height="77" alt="image" src="https://github.com/user-attachments/assets/a9ca09be-aee6-4c08-9195-f518f773fdaf" />
 
-<!-- Inserir print do enunciado e da mensagem original -->
 
 Ao observar a sequência, percebemos que ela possui uma estrutura semelhante ao formato das flags utilizadas no CyLab:
-
-```text
-picoCTF{...}
-```
 
 Entretanto, os caracteres aparecem substituídos por outras letras.
 
 Como o enunciado menciona o ROT13, podemos testar esse método de decodificação.
 
-### Etapa 2 — Entendendo o ROT13
+### Etapa 2: Entendendo o ROT13
 
 Antes de realizar a decodificação, é importante compreender como funciona o deslocamento das letras.
 
@@ -84,24 +81,15 @@ Original: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ROT13:    NOPQRSTUVWXYZABCDEFGHIJKLM
 ```
 
-Assim:
-
-- `A` se transforma em `N`.
-- `B` se transforma em `O`.
-- `C` se transforma em `P`.
-- `N` se transforma em `A`.
-- `O` se transforma em `B`.
-- `P` se transforma em `C`.
-
 Esse processo também funciona com letras minúsculas.
 
 Caracteres como números, espaços, chaves e símbolos não são alterados pelo ROT13.
 
 Uma característica importante dessa cifra é que o próprio ROT13 pode ser utilizado tanto para codificar quanto para decodificar uma mensagem.
 
-### Etapa 3 — Decodificando com o terminal Linux
+### Etapa 3: Decodificando com o terminal Linux
 
-Para resolver o desafio, podemos utilizar o comando `tr`, disponível em sistemas Linux.
+Para resolver o desafio, podemos utilizar o comando `tr`.
 
 Esse comando permite substituir caracteres de uma entrada por outros caracteres definidos pelo usuário.
 
@@ -121,41 +109,26 @@ Podemos dividir o comando em algumas partes:
 
 Dessa forma, o comando realiza automaticamente a substituição necessária para aplicar o ROT13.
 
-### Etapa 4 — Obtendo a flag
+### Etapa 4: Obtendo a flag
 
 Após compreender o funcionamento do comando, basta substituir `MENSAGEM_CODIFICADA` pela sequência fornecida no desafio.
 
-Por exemplo, podemos testar:
+Em seguida, aplicamos a substituição à mensagem.
 
-```bash
-echo "cvpbPGS" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-```
+<img width="660" height="102" alt="image" src="https://github.com/user-attachments/assets/84badfb0-a3fd-4ec4-af88-09eed454cc5a" />
 
-**Resultado:**
-
-```text
-picoCTF
-```
-
-Isso confirma que o método utilizado está correto.
-
-Em seguida, aplicamos a mesma substituição à mensagem completa.
-
-**Resultado:**
-
-<!-- Inserir print do comando utilizado e da flag decodificada -->
 
 Após a execução, a sequência original é transformada em uma mensagem legível, revelando a flag.
 
 O resultado apresenta a estrutura:
 
 ```text
-picoCTF{next_time_I'll_try_2_rounds_of_rot13_...}
+academy{next_time_I'll_try_2_rounds_of_rot13_5c5f5b36}
 ```
 
 Com isso, o desafio foi concluído.
 
-## 5. Conclusão
+## 5: Conclusão
 
 O desafio *Mod 26* demonstrou o funcionamento de uma cifra de substituição simples, conhecida como ROT13.
 
@@ -171,7 +144,7 @@ Durante a resolução, foram utilizados os seguintes conhecimentos e ferramentas
 
 O principal aprendizado foi compreender que o ROT13 é uma técnica de substituição reversível, na qual a mesma operação pode ser utilizada tanto para codificar quanto para decodificar uma mensagem.
 
-Além disso, o desafio mostrou como ferramentas simples do terminal Linux podem ser utilizadas para resolver problemas básicos de criptografia, sem a necessidade de desenvolver programas mais complexos.
+Além disso, o desafio mostrou como ferramentas simples do terminal podem ser utilizadas para resolver problemas básicos de criptografia, sem a necessidade de desenvolver programas mais complexos.
 
 
 Além disso, o desafio mostrou como ferramentas simples do terminal Linux podem ser utilizadas para resolver problemas básicos de criptografia, sem a necessidade de desenvolver programas mais complexos.
