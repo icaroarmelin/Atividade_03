@@ -4,19 +4,19 @@
 **Plataforma:** CyLab  
 **Dificuldade:** A confirmar
 
-## 1. Introdução
+## Introdução
 
 Este write-up apresenta a resolução do desafio *Crackme.py*, disponibilizado na plataforma CyLab como exercício prático de engenharia reversa.
 
 O objetivo do desafio é analisar um programa escrito em Python, compreender seu funcionamento e encontrar uma flag escondida no código.
 
-## 2. Enunciado
+## Enunciado
 
 O desafio disponibiliza um arquivo chamado `crackme.py`, que contém um programa escrito em Python.
 
 O objetivo é investigar o código e descobrir como recuperar a informação escondida.
 
-## 3. Interpretação do desafio
+## Interpretação do desafio
 
 O nome *Crackme* é geralmente utilizado em desafios de engenharia reversa, nos quais precisamos analisar um programa para descobrir uma senha, identificar uma informação oculta ou compreender alguma condição necessária para obter o resultado esperado.
 
@@ -24,14 +24,14 @@ Como o arquivo disponibilizado está escrito em Python, podemos analisar diretam
 
 Dessa forma, a estratégia foi analisar o funcionamento do programa e procurar possíveis funções ou informações que não fossem utilizadas durante sua execução normal.
 
-## 4. Resolução
+## Resolução
 
-### Etapa 1 — Análise do arquivo
+### Etapa 1: Análise do arquivo
 
-Após realizar o download do arquivo `crackme_gen.py`, comecei a investigação utilizando o comando:
+Após realizar o download do arquivo `crackme.py`, comecei a investigação utilizando o comando:
 
 ```bash
-cat crackme.py
+cat crackme_gen.py
 ```
 
 O comando `cat` permite visualizar o conteúdo de arquivos diretamente no terminal.
@@ -59,7 +59,6 @@ Para entender melhor seu funcionamento, executei:
 python crackme_gen.py
 ```
 
-**Resultado:**
 
 <img width="395" height="110" alt="image" src="https://github.com/user-attachments/assets/a67d3c88-bc49-41b0-8f28-d0a06319f399" />
 
