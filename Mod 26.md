@@ -87,7 +87,7 @@ Caracteres como números, espaços, chaves e símbolos não são alterados pelo 
 
 Uma característica importante dessa cifra é que o próprio ROT13 pode ser utilizado tanto para codificar quanto para decodificar uma mensagem.
 
-### Etapa 3: Decodificando com o terminal Linux
+### Etapa 3: Decodificando com o terminal
 
 Para resolver o desafio, podemos utilizar o comando `tr`.
 
