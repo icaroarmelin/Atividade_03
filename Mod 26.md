@@ -1,13 +1,11 @@
 
 # Mod 26
 
-Categoria: Criptografia
+**Categoria:** Criptografia  
+**Plataforma:** CyLab  
+**Dificuldade:** Fácil
 
-Plataforma: CyLab  
-
-Dificuldade: Fácil
-
-## Introdução
+## 1. Introdução
 
 Este write-up apresenta a resolução do desafio *Mod 26*, disponibilizado na plataforma CyLab como exercício prático de criptografia.
 
@@ -15,15 +13,15 @@ O desafio consiste em decodificar uma mensagem utilizando uma técnica de substi
 
 Seu principal objetivo é introduzir conceitos básicos de criptografia, especialmente as cifras de substituição e o funcionamento da aritmética modular.
 
-## Enunciado
+## 2. Enunciado
 
 O desafio apresenta a seguinte descrição:
 
-"Cryptography can be easy, do you know what ROT13 is?"
+> "Cryptography can be easy, do you know what ROT13 is?"
 
 Além do enunciado, é disponibilizada uma sequência de caracteres codificados, que devemos decifrar para encontrar a flag.
 
-## Interpretação do desafio
+## 3. Interpretação do desafio
 
 O enunciado fornece uma dica importante ao mencionar diretamente o ROT13.
 
@@ -172,5 +170,8 @@ Durante a resolução, foram utilizados os seguintes conhecimentos e ferramentas
 - **Tr:** para realizar a substituição automática dos caracteres.
 
 O principal aprendizado foi compreender que o ROT13 é uma técnica de substituição reversível, na qual a mesma operação pode ser utilizada tanto para codificar quanto para decodificar uma mensagem.
+
+Além disso, o desafio mostrou como ferramentas simples do terminal Linux podem ser utilizadas para resolver problemas básicos de criptografia, sem a necessidade de desenvolver programas mais complexos.
+
 
 Além disso, o desafio mostrou como ferramentas simples do terminal Linux podem ser utilizadas para resolver problemas básicos de criptografia, sem a necessidade de desenvolver programas mais complexos.
